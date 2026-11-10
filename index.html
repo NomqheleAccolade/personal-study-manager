@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#home" class="logo">Study<span>Manager</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tasks">My Tasks</a>
+            <a href="#timetable">Timetable</a>
+            <a href="#progress">Progress</a>
+            <a href="#settings">Settings</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR ACADEMIC SPACE</p>
+                <h1>Organise Your Academic Life</h1>
+                <p class="hero-description">
+                    Keep track of your assignments, plan your study time
+                    and see the progress you make.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#tasks" class="button primary">Add Study Task</a>
+                    <a href="#progress" class="button secondary">View Progress</a>
+                </div>
+            </div>
+
+            <div class="dashboard-preview">
+                <div class="preview-card main-preview">
+                    <p class="card-label">YOUR TASKS</p>
+                    <h2 id="previewTaskCount">0</h2>
+                    <p>Tasks added</p>
+                    <div class="preview-line">
+                        <span id="previewCompleted">0 completed</span>
+                        <span id="previewPending">0 pending</span>
+                    </div>
+                </div>
+
+                <div class="preview-card progress-preview">
+                    <p class="card-label">COMPLETION</p>
+                    <h2 id="previewProgress">0%</h2>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="previewProgressBar"></div>
+                    </div>
+                    <p>Your study progress</p>
+                </div>
+
+                <div class="preview-card focus-preview">
+                    <p class="card-label">NEXT DEADLINE</p>
+                    <h3 id="nextDeadline">No upcoming tasks</h3>
+                    <p id="nextDeadlineDate">Add a task with a due date</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats" id="progress">
+            <article class="stat-card">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total tasks</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Tasks completed</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-number" id="pendingTasks">0</span>
+                <span class="stat-label">Tasks pending</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-number" id="completionRate">0%</span>
+                <span class="stat-label">Completion rate</span>
+            </article>
+        </section>
+
+        <section class="content-section" id="tasks">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">STAY ON TRACK</p>
+                    <h2>My Study Tasks</h2>
+                </div>
+                <p class="section-note">Add work, track it and mark it complete.</p>
+            </div>
+
+            <div class="task-panel">
+                <form id="taskForm">
+                    <div class="form-field task-name-field">
+                        <label for="taskInput">Task description</label>
+                        <input type="text"
+                               id="taskInput"
+                               placeholder="e.g. Revise Object-Oriented Programming"
+                               required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="taskDate">Due date</label>
+                        <input type="date" id="taskDate">
+                    </div>
+
+                    <button type="submit" class="button primary add-button">
+                        Add Task
+                    </button>
+                </form>
+
+                <div class="task-toolbar">
+                    <h3>Your task list</h3>
+                    <input type="search"
+                           id="taskSearch"
+                           placeholder="Search tasks..."
+                           aria-label="Search tasks">
+                </div>
+
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+        </section>
+
+        <section class="content-section timetable-section" id="timetable">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLAN AHEAD</p>
+                    <h2>Upcoming Deadlines</h2>
+                </div>
+                <p class="section-note">Your dated tasks appear here automatically.</p>
+            </div>
+
+            <div id="deadlineList" class="deadline-list">
+                <p class="empty-message">Your upcoming deadlines will appear here.</p>
+            </div>
+        </section>
+
+        <section class="content-section settings-section" id="settings">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORKSPACE</p>
+                    <h2>Settings</h2>
+                </div>
+            </div>
+
+            <div class="settings-panel">
+                <div>
+                    <h3>Clear your task list</h3>
+                    <p>This removes all tasks saved in this browser.</p>
+                </div>
+                <button type="button" id="clearTasksButton" class="button danger">
+                    Clear All Tasks
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Study Manager <span>·</span> Plan better. Study smarter.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
